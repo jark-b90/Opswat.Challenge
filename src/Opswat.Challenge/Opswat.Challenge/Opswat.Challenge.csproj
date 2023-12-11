@@ -6,7 +6,6 @@
 
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
     <PublishTrimmed>true</PublishTrimmed>
@@ -22,11 +21,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="api.key" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include=".res\scan.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="api.key" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if not exist api.key ( echo # Write here bellow the API KEY &gt; api.key )" />
+  </Target>
 
 </Project>
