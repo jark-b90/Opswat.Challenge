@@ -3,7 +3,6 @@ using System.Net;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text.Json;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Opswat.Challenge
 {
