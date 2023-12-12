@@ -32,10 +32,6 @@
     <EmbeddedResource Include="api.key" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="if not exist api.key ( echo # Write here bellow the API KEY &gt; api.key )" />
   </Target>
